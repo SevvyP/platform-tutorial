@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
+const START_POSITION = Vector2(576, 208)
 
 
 func _physics_process(delta: float) -> void:
@@ -23,3 +24,12 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+	
+	# drop off bottom of screen
+	if position.y > 900:
+		respawn()
+
+
+		
+func respawn():
+	position = START_POSITION
