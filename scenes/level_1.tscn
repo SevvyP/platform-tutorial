@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bj5v0jlsdj2a8" path="res://prefabs/spike.tscn" id="3_4nkto"]
 [ext_resource type="Texture2D" uid="uid://wbkxqwb7w2kb" path="res://sprites/spritesheet-tiles-default.png" id="4_4nkto"]
 [ext_resource type="PackedScene" uid="uid://b5kt88kiq4wbh" path="res://prefabs/portal.tscn" id="4_5xbjy"]
+[ext_resource type="Texture2D" uid="uid://dpma1d3sku3l1" path="res://sprites/background_color_mushrooms.png" id="5_4nkto"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fcfvj"]
 texture = ExtResource("4_4nkto")
@@ -363,6 +364,18 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_fcfvj")
 
 [node name="level1" type="Node2D" unique_id=1888188245]
+
+[node name="background" type="Parallax2D" parent="." unique_id=1563056026]
+scale = Vector2(1.1067339, 0.81881946)
+scroll_scale = Vector2(0.5, 0.5)
+scroll_offset = Vector2(0, -224)
+repeat_size = Vector2(1152, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="background" unique_id=1402478215]
+scale = Vector2(2.255, 2.255)
+texture = ExtResource("5_4nkto")
+centered = false
+offset = Vector2(0, -38.895)
 
 [node name="player" parent="." unique_id=600784724 instance=ExtResource("1_5xbjy")]
 position = Vector2(576, 224)
