@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://b5kt88kiq4wbh"]
+
+[ext_resource type="Script" uid="uid://wv6ek1n8my2b" path="res://scripts/portal.gd" id="1_y2eew"]
+[ext_resource type="Texture2D" uid="uid://ccmoxybplv7xn" path="res://sprites/door_open.png" id="2_srbon"]
+[ext_resource type="Texture2D" uid="uid://rxckom4y4dvh" path="res://sprites/door_open_top.png" id="3_4ooq7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_862ts"]
+size = Vector2(64, 128)
+
+[node name="portal" type="Area2D" unique_id=1296499932]
+script = ExtResource("1_y2eew")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1523073837]
+position = Vector2(0, -64)
+shape = SubResource("RectangleShape2D_862ts")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=503745476]
+position = Vector2(0, -32)
+texture = ExtResource("2_srbon")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=2005458733]
+position = Vector2(0, -96)
+texture = ExtResource("3_4ooq7")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
